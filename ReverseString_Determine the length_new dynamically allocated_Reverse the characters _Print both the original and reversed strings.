@@ -1,0 +1,29 @@
+#include <iostream>
+using namespace std;
+void reverseString(const char* input) {
+    int length = 0;
+    while (input[length] != '\0') {
+        length++;
+    }
+
+    char* reversed = new char[length + 1];
+
+    for (int i = 0; i < length; i++) {
+        reversed[i] = input[length - 1 - i];
+    }
+    reversed[length] = '\0';
+
+    cout << "Original string: " << input << endl;
+    cout << "Reversed string: " << reversed << endl;
+
+    delete[] reversed;
+}
+
+int main() {
+
+    const char* exampleString = "practice";
+    reverseString(exampleString);
+
+    return 0;
+}
+
