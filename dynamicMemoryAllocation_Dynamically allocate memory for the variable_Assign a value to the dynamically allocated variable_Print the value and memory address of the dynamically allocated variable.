@@ -1,0 +1,26 @@
+#include <iostream>
+using namespace std;
+template <typename T>
+void dynamicMemoryAllocation(T value) {
+
+    T* ptr = new T;  // Dynamically allocate memory for the type T
+
+    *ptr = value;
+
+    cout << "Value of the dynamically allocated variable: " << *ptr << endl;
+    cout << "Memory address of the dynamically allocated variable: " << ptr << endl;
+
+    delete ptr;
+    cout << "Memory deallocated." << endl;
+}
+
+int main() {
+
+    int exampleInt = 100;
+    dynamicMemoryAllocation(exampleInt);
+
+    double exampleDouble = 3.14159;
+    dynamicMemoryAllocation(exampleDouble);
+
+    return 0;
+}
